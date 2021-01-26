@@ -4,7 +4,7 @@ lazySpin is a simple JavaScript library to create loading screens as simple as p
 
 ## Installation
 
-Include the .js file and .css file in the head of the HTML.
+Include the .js file and .css file from the build folder in the head of the HTML.
 
 ```html
 <link rel="stylesheet" href="lazySpin.css">
