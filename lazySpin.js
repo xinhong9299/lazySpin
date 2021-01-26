@@ -57,13 +57,17 @@ function createLoadingScreen(obj, id){
         case 'white':
             box.style.backgroundColor = 'rgba(255, 255, 255, 1)'
             break;
+        case undefined:
+            box.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'
+            break;
         default:
             box.style.backgroundColor = obj.properties.overlay
             break;
     }
 
-    s3.style.borderTopColor = obj.properties.color
+    obj.properties.color === undefined? s3.style.borderTopColor = 'red': s3.style.borderTopColor = obj.properties.color
 
+    let speed = 1000
     switch(obj.properties.speed){
         case 'normal':
             speed = 1000;
@@ -73,6 +77,9 @@ function createLoadingScreen(obj, id){
             break;
         case 'slow':
             speed = 3000;
+            break;
+        case undefined:
+            speed = 1000;
             break;
         default:
             speed = obj.properties.speed
