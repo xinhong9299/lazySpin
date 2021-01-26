@@ -1,4 +1,4 @@
-.overlay{
+.loading-overlay{
     display: none;
     overflow: hidden;
     position: absolute;
@@ -19,6 +19,7 @@
     border: 1em solid white;
     border-top: 1em solid red;
     border-radius: 50%;
+    -webkit-box-sizing: initial;
 }
 
 .shadow-1{

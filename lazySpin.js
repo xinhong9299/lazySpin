@@ -37,7 +37,7 @@ function createLoadingScreen(obj, id){
     var s2 = document.createElement('div')
     var s3 = document.createElement('div')
 
-    box.className = 'overlay'
+    box.className = 'loading-overlay'
     box.id = id
     s1.className = 'shadow-1'
     s2.className = 'shadow-2'
