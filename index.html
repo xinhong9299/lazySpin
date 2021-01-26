@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lazySpin</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="lazySpin.css">
+    <script src="lazySpin.js"></script>
+
+
+</head>
+
+<style>
+    pre{
+        background-color: bisque;
+        padding: 1em;
+        white-space: pre;
+    }
+</style>
+
+<body>
+    <div class="container" style="padding-top: 2em;">
+
+        <div>
+            <button class="btn btn-primary" onclick="showFull()">Show Loading Screen</button>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-4">
+                <div style="margin-top: 1em;">
+                    <div style="width: 300px; ">
+                    <pre id='first'></pre>
+                </div>
+                    <div id='blue' style="background-color: aliceblue; height: 300px; width: 300px; position: relative;"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div style="margin-top: 1em;">
+                    <div style="width: 300px; ">
+                    <pre id='second'></pre>
+                </div>
+                    <div id='pink' style="background-color: pink; height: 300px; width: 300px; position: relative;"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div style="margin-top: 1em;">
+                    <div style="width: 300px; ">
+                    <pre id='third'></pre>
+                </div>
+                    <div id='mint' style="background-color: mintcream; height: 300px; width: 300px; position: relative;"></div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var loaded = false
+
+    let loadingScreen = new LoadingScreen()
+    let loadingScreen2 = new LoadingScreen()
+    let loadingScreen3 = new LoadingScreen()
+    let loadingScreen4 = new LoadingScreen()
+    loadingScreen2.properties = {
+        overlay: 'white',
+        color: 'pink',
+        speed: 'fast'
+    }
+    loadingScreen3.properties = {
+        overlay: 'dark',
+        color: 'rgb(60,25,188)',
+        speed: 'slow'
+    }
+    loadingScreen4.properties = {
+        overlay: 'rgba(0,0,0,0)',
+        color: 'mediumaquamarine',
+        speed: 'normal'
+    }
+
+    loadingScreen.addTo(document.body, 'fullpage')
+    loadingScreen2.addTo(document.getElementById('blue'), 'blueLoading')
+    loadingScreen3.addTo(document.getElementById('pink'), 'pinkLoading')
+    loadingScreen4.addTo(document.getElementById('mint'), 'mintLoading')
+
+    loadingScreen2.showLoading('blueLoading')
+    loadingScreen3.showLoading('pinkLoading')
+    loadingScreen4.showLoading('mintLoading')
+
+    function showFull() {
+        loadingScreen.showLoading('fullpage')
+        setTimeout(() => {
+            loadingScreen.stopLoading('fullpage')
+        }, 3000);
+    }
+
+    document.getElementById('first').append(`
+loadingScreen.properties = {
+    overlay: 'white',
+    color: 'pink',
+    speed: 'fast'
+}`
+    )
+
+    document.getElementById('second').append(`
+loadingScreen.properties = {
+    overlay: 'dark',
+    color: 'rgb(60,25,188)',
+    speed: 'slow'
+}`
+    )
+
+    document.getElementById('third').append(`
+loadingScreen4.properties = {
+    overlay: 'rgba(0,0,0,0)',
+    color: 'mediumaquamarine',
+    speed: 'normal'
+}`
+    )
+
+
+</script>
