@@ -1,0 +1,44 @@
+.overlay{
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: inherit;
+    height: inherit;
+}
+
+.spinner{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left:50%;
+    top:50%;
+    border: 1em solid white;
+    border-top: 1em solid red;
+    border-radius: 50%;
+}
+
+.shadow-1{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left:50%;
+    top:50%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 5em black;
+    transform: translate(-50%,-50%)
+}
+
+.shadow-2{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left:50%;
+    top:50%;
+    border-radius: 50%;
+    box-shadow: inset -5px 0px 20px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%,-50%)
+}
